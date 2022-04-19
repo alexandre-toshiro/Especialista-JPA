@@ -1,0 +1,8 @@
+com\algaworks\ecommerce\AiniciandoComJPA\CDiferencaMerge_Persist.class
+com\algaworks\ecommerce\BMapeamentoBasico\BMapeamentoObjetoEMBUTIDO.class
+com\algaworks\ecommerce\AiniciandoComJPA\AConsultandoRegistrosTest.class
+com\algaworks\ecommerce\AiniciandoComJPA\DExerciciosCRUD.class
+com\algaworks\ecommerce\BMapeamentoBasico\AMapeandoEnumeracoesTest.class
+com\algaworks\ecommerce\EntityManagerTest.class
+com\algaworks\ecommerce\AiniciandoComJPA\BOperacoesComTransacaoTest.class
+com\algaworks\ecommerce\BMapeamentoBasico\CEstrategiaChavePrimariaTest.class

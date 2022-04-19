@@ -1,0 +1,14 @@
+com\algaworks\ecommerce\model\Pedido.class
+com\algaworks\ecommerce\model\StatusPagamento.class
+com\algaworks\ecommerce\model\ItemPedido.class
+com\algaworks\ecommerce\util\IniciarUnidadeDePersistencia.class
+com\algaworks\ecommerce\model\Estoque.class
+com\algaworks\ecommerce\model\NotaFiscal.class
+com\algaworks\ecommerce\model\Produto.class
+com\algaworks\ecommerce\model\StatusPedido.class
+com\algaworks\ecommerce\model\Categoria.class
+com\algaworks\ecommerce\model\SexoCliente.class
+com\algaworks\ecommerce\model\Cliente.class
+com\algaworks\ecommerce\model\EnderecoEntregaPedido.class
+com\algaworks\ecommerce\model\PagamentoBoleto.class
+com\algaworks\ecommerce\model\PagamentoCartao.class
