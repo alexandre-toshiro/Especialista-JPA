@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -34,5 +35,15 @@ public class Produto {
 
     @OneToOne(mappedBy = "produto")
     private Estoque estoque;
+
+    @Column(name = "data_criacao", updatable = false)
+    private LocalDateTime dataCriacao;
+    // updatable = false -> Esse atributo nunca será alterado quando ouve algum update.
+    // obviamente por ser uma data de criação a intenção é que seja um data unica na hora da sua inserção
+
+
+    @Column(name = "data_ultima_atualizacao", insertable = false)
+    private LocalDateTime dataUltimaAtualizacao;
+    // insertable = false- > Esse atributo nunca será setado dentro da criação desse objeto, apenas nas atualizações
 
 }
