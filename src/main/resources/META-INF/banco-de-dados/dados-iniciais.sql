@@ -6,6 +6,6 @@ insert into cliente (id, nome) values (2, 'Marcos Mariano');
 
 insert into pedido (data_conclusao, data_criacao, data_ultima_atualizacao, Logradouro, bairro, cep, cidade, complemento, estado, numero, status, total, cliente_id) values (sysdate(), sysdate(), sysdate(),'Logradouro', 'bairro', '01201-030','SÃO-PAULO', 'COMPLEMENTO','SÃO PAULO', 100, 'AGUARDANDO', 100.0, 1);
 
-insert into item_pedido (id, pedido_id, produto_id, preco_produto, quantidade) values (1, 1, 1, 5.0, 2);
+insert into item_pedido (pedido_id, produto_id, preco_produto, quantidade) values (1, 1, 5.0, 2);
 
 insert into categoria(id, nome) values (1, 'Eletronicos');
