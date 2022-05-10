@@ -16,7 +16,7 @@ public class NotaFiscal {
 
     @EqualsAndHashCode.Include
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pedido_id")
     private Integer id;
 
     @OneToOne(optional = false) // Para ter um pedido precisa OBRIGATORIAMENTE de um pedido

@@ -9,9 +9,10 @@ import java.time.LocalDateTime;
 
 public class BChaveCompostaTest extends EntityManagerTest {
 
-    //1 - ) Acrescentar dois atributos que irão compor a chave composta na classe ItemPedido
+    // explicação com o @IdClass
+    //1) -  Acrescentar dois atributos que irão compor a chave composta na classe ItemPedido
     //2) - Será criada a classe ItemPedidoId, e esses mesmos dois atributos serão inseridos nela. Mas sem anotação do JPA
-    //3) - Voltando a classe item pedido iremos anotas a classe com "@IdClass(ItemPedidoId.class)" indicando qual classe será o "id" dela.
+    //3) - Voltando a classe item pedido iremos anotar a classe com "@IdClass(ItemPedidoId.class)" indicando qual classe será o "id" dela.
     //4) - Na classe ItemPedido, nos atributos de ENTIDADE Pedido e Produto, deve ser adicionado "insertable = false, updatable = false"
     // Pois assim sinalizamos que a responsabilidade de inserir os ids não é daquele atributo em si, mas sim dos especificos que estão acima
     // Mantemos os dois, pois os atributos do tipo das Entidades fazem o relacionamento, enquanto os ids, fazem a chave composta.
@@ -34,8 +35,9 @@ public class BChaveCompostaTest extends EntityManagerTest {
         entityManager.flush();
 
         ItemPedido itemPedido = new ItemPedido();
-        itemPedido.setPedidoId(pedido.getId());
-        itemPedido.setProdutoId(produto.getId());
+//        itemPedido.setPedidoId(pedido.getId()); IdClass
+//        itemPedido.setProdutoId(produto.getId()); IdClass
+        itemPedido.setId(new ItemPedidoId(pedido.getId(), produto.getId()));
         itemPedido.setPedido(pedido);
         itemPedido.setProduto(produto);
         itemPedido.setPrecoProduto(produto.getPreco());
@@ -59,6 +61,13 @@ public class BChaveCompostaTest extends EntityManagerTest {
 
         Assertions.assertNotNull(itemPedido);
     }
-
+    // Explicação com Embeddable
+    /*
+    1) - Devemos colocar as anotações JPA dentro da classe ItemPedidoId
+    2) - Vamos anota-la com @Embeddable que quer dizer que a classe ItemPedidoId será incorporada por outra
+    3) - Na classe ItemPedido iremos colocar ItemPedidoId como um atributo privado, anotado como
+        @EmbeddedId que indica que aquele atributo será o objeto que conterá a chave composta
+    4) - Na classe ItemPedidoId, não se pode ter anotação @id dentro dos atributos
+     */
 
 }
