@@ -30,12 +30,14 @@ public class ItemPedido {
 //    @Column(name = "produto_id")
 //    private Integer produtoId;
 
+    @MapsId("pedidoId")// na chave composta, passamo aqui a variavel da classe feita pra chave composta
     @ManyToOne(optional = false)
-    @JoinColumn(name = "pedido_id", insertable = false, updatable = false)
+    @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
+    @MapsId("produtoId")
     @ManyToOne(optional = false)
-    @JoinColumn(name = "produto_id", insertable = false, updatable = false)
+    @JoinColumn(name = "produto_id")
     private Produto produto;
 
     @Column(name = "preco_produto")

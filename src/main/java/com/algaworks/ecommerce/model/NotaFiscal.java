@@ -19,7 +19,8 @@ public class NotaFiscal {
     @Column(name = "pedido_id")
     private Integer id;
 
-    @OneToOne(optional = false) // Para ter um pedido precisa OBRIGATORIAMENTE de um pedido
+    @MapsId// Para ter uma notafiscal precisa OBRIGATORIAMENTE de um pedido
+    @OneToOne(optional = false) // logo faz sentido colocar o id do pedido como PK da Nota Fiscal
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
